@@ -52,7 +52,7 @@ public class ProdusController {
         return produsRepository.save(produsDeAdaugat);
     }
 
-    //TODO: input absent pe variabile
+
     @PostMapping("/modifica/{id}")
     Produs modificaProdus(@PathVariable Integer id, @RequestBody ProdusDTOModificaProdus produsModificat) {
         Produs produsDeModificat = produsRepository.findById(id).orElseThrow(()-> new RuntimeException("Produsul " +
