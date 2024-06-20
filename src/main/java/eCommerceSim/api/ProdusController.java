@@ -71,11 +71,11 @@ public class ProdusController {
         return ResponseEntity.ok("Produsul a fost sters!");
     }
 
-//    @GetMapping("/filtreaza-produse")
-//    public List<Produs> filtrareProduse(@RequestParam String categorie,
-//                                        @RequestParam Integer pretMaxim) {
-//
-//
-//    }
+    @GetMapping("/filtreaza-produse")
+    public ResponseEntity<List<Produs>> filtruProduse(
+            @RequestParam String categorie, @RequestParam Double pret) {
+        List<Produs> produse = produsRepository.filtreazaCategorieSiPret(categorie, pret);
+        return ResponseEntity.ok(produse);
+    }
 
 }
